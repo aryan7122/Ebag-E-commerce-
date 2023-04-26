@@ -1,0 +1,91 @@
+@import "../../css-config/mixins.scss";
+.main-header{
+    width: 100%;
+    padding: 0 20px;
+    background: #212121;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(0,0,0, 0.1);
+    z-index: 99;
+    @include md{
+        padding: 0 40px;
+    }
+    .header-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        max-width: 1200px;
+        margin: auto;
+        @include md{
+        }
+        .left{
+            display: none;
+            justify-content: space-between;
+            gap: 25px;
+            @include md{
+                display: flex;
+                align-items: center;
+            }
+            li{
+                list-style-type: none;
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+        }
+        .center{
+            font-size: 22px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            @include md {
+                gap: 25px;
+            }
+            svg{
+                font-size: 20px;
+                cursor: pointer;
+                @include md{
+
+                    font-size: 24px;
+                }
+            }
+            .card-icon{
+                position: relative;
+                span{
+                    cursor: pointer;
+                    min-width: 20px;
+                    text-align: center;
+                    background: #8801ffc0;
+                    border-radius: 50%;
+                    align-items: center;
+                    padding: 2.5px;
+                    text-shadow: 0px 2px 4px rgb(255, 255, 255);
+                    position: absolute;
+                    top: -5px;
+                    right: -12px;
+                    line-height: 1;
+                }
+            }
+        }
+    }
+    &.sticky-header{
+        position: sticky;
+        top: 0;
+        transform: translateY(-80px);
+        animation: stickyHeader 0.3s ease forwards;
+    }
+}
+
+@keyframes stickyHeader{
+    0%{
+        transform: translateY(-80px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

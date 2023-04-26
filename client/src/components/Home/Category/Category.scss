@@ -1,0 +1,72 @@
+@import "../../../css-config/mixins.scss";
+
+.shop_by_category {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background: rgb(26, 26, 26);
+    box-shadow: inset 1px 1px 5px 4px black;
+
+    &:hover {
+        box-shadow: inset -1px 0px 4px 3px black;
+
+    }
+
+    margin: 0 auto;
+
+    .categories {
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include md {
+            flex-direction: row;
+            height: 240px;
+        }
+
+        .category {
+            border: 3px solid rgb(0, 0, 0);
+            width: 95%;
+            height: 70%;
+            margin: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 5px 1px rgb(0, 0, 0);
+
+            &:hover {
+                box-shadow: 0px 0px 7px 8px rgb(0, 0, 0);
+                border: 3px solid rgb(45, 45, 45);
+            }
+
+            @include md {
+                height: 50%;
+            }
+
+            @include lg {
+                height: 65%;
+            }
+
+            @include xl {
+                height: 70%;
+            }
+
+            @include xxl {
+                height: 85%;
+            }
+
+            img {
+                transition: .3s linear;
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                transform: scale(1.038);
+
+                &:hover {
+                    transform: scale(1.25);
+                }
+            }
+        }
+    }
+}

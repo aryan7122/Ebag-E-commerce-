@@ -1,0 +1,117 @@
+@import "../../../css-config/mixins.scss";
+
+.hero-banner{
+    padding: 40px 0px;
+    position: relative;
+    background-image: linear-gradient(80deg, rgb(255, 0, 140)20% , #7e1ad6 80%);
+    .content {
+        height: calc(100vh);
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column-reverse;
+        align-items: center;
+        margin: 0 auto;
+        max-width: calc(100% - 20px);
+        position: relative;
+        @include md{
+            flex-direction: row;
+            max-width: 1200px;
+        }
+        @include md{
+            flex-direction: row;
+            max-width: 1200px;
+        }
+        .banner-img{
+            position: relative;
+            z-index: 9;
+            width: 200px;
+            margin-bottom: 20px;
+            cursor: none;
+            padding: 5px;
+            @include md{
+                width: 500px;
+                margin-right: 60px;
+                margin-top: 50px;
+                margin-bottom: 0;
+            }
+            @include xxl{
+                width: 600px;
+                margin-right: 0px;
+                margin-top: 0px;
+            }
+        }
+        .text-content{
+            color: white;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include md{
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @include xxl{
+                left: 0;
+            }
+            h1{
+                font-size: 80px;
+                font-weight: 700;
+                line-height: 1;
+                margin-bottom: 20px;
+                border-radius: 5px;
+                padding: 5px;
+                // border-bottom: 2px solid white ;
+                // border-left: 2px dashed white ;
+                @include md{
+                    font-size: 170px;
+                    box-shadow:inset 0px 0px 4px 1.3px rgb(37, 37, 37);
+                    text-shadow: 0px 2px 4px white;
+                }
+            }
+            p{
+                border-radius: 5px;
+                max-width: 300px;
+                font-size: 14px;
+                left: 20px;
+                margin-bottom: 20px;
+                // box-shadow: inset 0px 0px 4px 1.3px rgb(38, 38, 38);
+                @include md{
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 40px;
+                    max-width: 450px;
+                    padding: 5px;
+                }
+            }
+            .ctac{
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                .Banner-cta{
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    box-shadow: inset 1px 1px 2px 1px rgb(0, 0, 0);
+                    &.v2{
+                        background: white;
+                        color: #000;
+                    }
+                    &:hover{
+                        box-shadow: inset 1px 1px 3px 1px rgb(53, 53, 53);
+                    }
+                    &:active{
+                        box-shadow: inset 1px 1px 4px 2px rgb(0, 0, 0);
+                    }
+                }
+                .Banner-cta::selection{
+                    background: none;
+                }
+            }
+        }
+    }
+}
